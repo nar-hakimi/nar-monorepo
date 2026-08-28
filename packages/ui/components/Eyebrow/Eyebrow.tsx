@@ -29,3 +29,6 @@ export function Eyebrow({ children, variant = 'default', align = 'left', classNa
     </p>
   );
 }
+
+
+
