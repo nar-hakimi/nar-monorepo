@@ -1,0 +1,26 @@
+.header {
+  padding: var(--space-xl) var(--section-px) var(--space-l);
+  max-width: 44rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-size: var(--fs-display-sm);
+  line-height: 1.2;
+  margin: 0 0 var(--space-s);
+}
+
+.heading :global(em) {
+  font-style: italic;
+  color: var(--color-signal);
+}
+
+.lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-lede);
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}

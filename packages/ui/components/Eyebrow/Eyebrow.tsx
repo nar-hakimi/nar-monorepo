@@ -3,8 +3,8 @@ import styles from './Eyebrow.module.css';
 
 type EyebrowProps = {
   children: ReactNode;
-  /** Use 'onDark' inside a StatementBlock or any dark-background section. */
   variant?: 'default' | 'onDark';
+  align?: 'left' | 'center';
   className?: string;
 };
 
@@ -14,10 +14,13 @@ type EyebrowProps = {
  * Operate", etc. Build once, reuse everywhere rather than hand-assembling
  * the dot + text per page.
  */
-export function Eyebrow({ children, variant = 'default', className }: EyebrowProps) {
-  const classes = [styles.eyebrow, variant === 'onDark' ? styles.onDark : '', className]
-    .filter(Boolean)
-    .join(' ');
+export function Eyebrow({ children, variant = 'default', align = 'left', className }: EyebrowProps) {
+  const classes = [
+    styles.eyebrow,
+    variant === 'onDark' ? styles.onDark : '',
+    align === 'center' ? styles.center : '',
+    className,
+  ].filter(Boolean).join(' ');
 
   return (
     <p className={classes}>

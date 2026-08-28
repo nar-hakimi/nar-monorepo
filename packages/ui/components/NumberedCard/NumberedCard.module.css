@@ -1,0 +1,32 @@
+.card {
+  padding-right: var(--space-m);
+  border-right: 1px solid var(--color-hairline);
+}
+
+.card:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.1em;
+  color: var(--color-signal);
+  margin-bottom: var(--space-s);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-h3);
+  margin: 0 0 var(--space-xs);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--color-ink-soft);
+  margin: 0;
+}

@@ -24,3 +24,7 @@
 .onDark {
   color: var(--color-signal);
 }
+
+.center {
+  justify-content: center;
+}

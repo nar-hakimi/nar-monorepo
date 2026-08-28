@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "../../../packages/ui/tokens/primitives.css";
+import "../styles/tokens.css";
+import { Navbar, Footer } from "@nar/ui";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +23,29 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Navbar
+          links={[
+            { label: "Industries", href: "/industries" },
+            { label: "Markets", href: "/markets" },
+            { label: "Experience", href: "/experience" },
+            { label: "How We Work", href: "/how-we-work" },
+            { label: "Services", href: "/services" },
+            { label: "About", href: "/about" },
+            { label: "Insights", href: "/insights" },
+          ]}
+          ctaLabel="Contact"
+          ctaHref="/contact"
+        />
+        {children}
+        <Footer
+          links={[
+            { label: "Contact", href: "/contact" },
+            { label: "Insights", href: "/insights" },
+            { label: "LinkedIn", href: "https://linkedin.com" },
+          ]}
+        />
+      </body>
     </html>
   );
 }

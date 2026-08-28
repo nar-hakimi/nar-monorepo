@@ -1,7 +1,16 @@
 export { Eyebrow } from './components/Eyebrow/Eyebrow';
 export { Button } from './components/Button/Button';
 export { SectionHeader } from './components/SectionHeader/SectionHeader';
-
-// Add each new shared component's export here as it's built:
-// Navbar, Footer, TeaserGrid, PillarCard, StatementBlock, MediaBlock,
-// Divider, FormField, Tag, PageHeader.
+export { Navbar } from './components/Navbar/Navbar';
+export type { NavLink } from './components/Navbar/Navbar';
+export { Footer } from './components/Footer/Footer';
+export type { FooterLink } from './components/Footer/Footer';
+export { Divider } from './components/Divider/Divider';
+export { NumberedCard } from './components/NumberedCard/NumberedCard';
+export { MediaBlock } from './components/MediaBlock/MediaBlock';
+export { TeaserGrid } from './components/TeaserGrid/TeaserGrid';
+export type { TeaserItem } from './components/TeaserGrid/TeaserGrid';
+export { StatementBlock } from './components/StatementBlock/StatementBlock';
+export { Tag } from './components/Tag/Tag';
+export { FormField } from './components/FormField/FormField';
+export { PageHeader } from './components/PageHeader/PageHeader';

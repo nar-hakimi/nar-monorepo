@@ -1,0 +1,36 @@
+.wrapper {
+  display: block;
+  margin-bottom: var(--space-s);
+}
+
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  margin-bottom: var(--space-2xs);
+}
+
+.field {
+  display: block;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-ink);
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-hairline);
+  padding: var(--space-xs);
+  transition: border-color 0.15s ease;
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--color-signal);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}

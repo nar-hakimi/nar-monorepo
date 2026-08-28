@@ -1,0 +1,15 @@
+.block {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+}

@@ -1,0 +1,26 @@
+.hairline {
+  border: none;
+  border-top: 1px solid var(--color-hairline);
+  margin: 0;
+}
+
+.lineDot {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  margin: var(--space-m) 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-hairline);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-signal);
+  flex-shrink: 0;
+}
