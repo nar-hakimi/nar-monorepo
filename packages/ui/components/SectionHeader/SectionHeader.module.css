@@ -1,0 +1,36 @@
+.header {
+  margin-bottom: var(--space-m);
+}
+
+.center {
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-h2);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0 0 var(--space-2xs);
+}
+
+/* Inline emphasis phrase — signal red, italic. Applies to any <em> the
+   caller puts inside the heading JSX, e.g. "...into <em>executable growth.</em>" */
+.heading :global(em) {
+  font-style: italic;
+  color: var(--color-signal);
+}
+
+.lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-lede);
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  max-width: 34rem;
+  margin: 0;
+}
+
+.center .lede {
+  margin-inline: auto;
+}

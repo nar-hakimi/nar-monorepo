@@ -1,0 +1,26 @@
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  margin: 0 0 var(--space-s);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-signal);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-signal);
+  flex-shrink: 0;
+}
+
+/* Reserved for future divergence (e.g. a dimmer red on dark surfaces).
+   Signal red already reads correctly on --color-ink, so no override yet. */
+.onDark {
+  color: var(--color-signal);
+}

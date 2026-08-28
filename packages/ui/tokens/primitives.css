@@ -1,0 +1,26 @@
+/**
+ * PRIMITIVES
+ * Raw values only — no semantic meaning, no app-specific decisions.
+ * Never reference these directly from a component; always go through
+ * the semantic layer (apps/<app>/styles/tokens.css) so brand differences
+ * between apps stay isolated to one file.
+ */
+
+:root {
+  /* ---- Color primitives ---- */
+  --gray-950: #131211;
+  --gray-050: #F7F6F3;
+  --white:    #FFFFFF;
+  --gray-600: #85837C;
+  --gray-700: #4A4844;
+  --gray-200: #DCDAD2;
+  --red-700:  #9E1B32;
+
+  /* ---- Fluid scale reference ----
+     All clamp() values in the semantic layer are generated against this
+     viewport range. If you change it, every clamp() must be recomputed —
+     see https://utopia.fyi/type/calculator and /space/calculator.
+       min viewport: 375px
+       max viewport: 1440px
+  */
+}
