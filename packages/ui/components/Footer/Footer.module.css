@@ -1,38 +1,80 @@
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-m);
-  padding: var(--space-m) var(--section-px);
   border-top: 1px solid var(--color-hairline);
-  font-family: var(--font-mono);
-  font-size: var(--fs-eyebrow);
-  letter-spacing: 0.04em;
-  color: var(--color-gray);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-l);
+  padding: var(--space-xl) var(--section-px) var(--space-l);
+  flex-wrap: wrap;
+}
+
+/* ---------- brand column ---------- */
+.brandCol {
+  max-width: 22rem;
 }
 
 .wordmark {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   letter-spacing: 0.02em;
   color: var(--color-ink);
+  margin-bottom: var(--space-s);
 }
 
 .dot {
   color: var(--color-signal);
 }
 
-.links {
+.tagline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-h3);
+  line-height: 1.35;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.tagline :global(em) {
+  font-style: italic;
+  color: var(--color-signal);
+}
+
+/* ---------- link groups ---------- */
+.groups {
   display: flex;
-  gap: var(--space-s);
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.group {
+  min-width: 9rem;
+}
+
+.groupTitle {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  margin: 0 0 var(--space-s);
+}
+
+.groupLinks {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
 .link {
-  color: var(--color-gray);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-ink-soft);
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -42,15 +84,26 @@
   color: var(--color-signal);
 }
 
-.tagline {
-  text-transform: uppercase;
-  white-space: nowrap;
+/* ---------- bottom bar ---------- */
+.bottom {
+  border-top: 1px solid var(--color-hairline);
+  padding: var(--space-s) var(--section-px);
 }
 
-@media (max-width: 600px) {
-  .footer {
+.copyright {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--color-gray);
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .top {
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-xs);
+  }
+
+  .groups {
+    gap: var(--space-l);
   }
 }

@@ -35,3 +35,9 @@ a.card:hover {
   color: var(--color-ink);
   margin: 0;
 }
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -18,7 +18,7 @@ export function TeaserGrid({ items, columns = 3, className }: TeaserGridProps) {
   return (
     <div
       className={[styles.grid, className].filter(Boolean).join(' ')}
-      style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+      style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}
     >
       {items.map((item) => {
         const content = (

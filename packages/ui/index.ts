@@ -4,7 +4,7 @@ export { SectionHeader } from './components/SectionHeader/SectionHeader';
 export { Navbar } from './components/Navbar/Navbar';
 export type { NavLink } from './components/Navbar/Navbar';
 export { Footer } from './components/Footer/Footer';
-export type { FooterLink } from './components/Footer/Footer';
+export type { FooterLink, FooterLinkGroup } from './components/Footer/Footer';
 export { Divider } from './components/Divider/Divider';
 export { NumberedCard } from './components/NumberedCard/NumberedCard';
 export { MediaBlock } from './components/MediaBlock/MediaBlock';
