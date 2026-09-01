@@ -36,16 +36,17 @@ export default function Home() {
         />
         <div className={styles.pillars}>
           <NumberedCard number="01 — ACCESS" title="Access">
-            Relationships built over years, not requested for a deal. We
-            open doors that don&apos;t open from a cold email.
+            Knowing the right operators, counterparties, buyers,
+            manufacturers, distributors, and strategic partners.
           </NumberedCard>
           <NumberedCard number="02 — INTELLIGENCE" title="Commercial Intelligence">
-            We read markets before the market reads itself — sourcing,
-            positioning, and timing informed by direct experience.
+            Understanding market dynamics, pricing, margins, supply,
+            demand, and where value can realistically be created.
           </NumberedCard>
           <NumberedCard number="03 — EXECUTION" title="Execution">
-            Strategy without follow-through is a deck. We stay in the room
-            until the deal is done.
+            Staying involved beyond strategy or introductions —
+            structuring, negotiating, and moving opportunities into
+            signed business.
           </NumberedCard>
         </div>
       </section>
