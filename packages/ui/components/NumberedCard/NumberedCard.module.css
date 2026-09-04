@@ -4,7 +4,6 @@
 }
 
 .card:last-child {
-  border-right: none;
   padding-right: 0;
 }
 
@@ -21,6 +20,11 @@
   font-weight: 500;
   font-size: var(--fs-h3);
   margin: 0 0 var(--space-xs);
+  transition: transform 0.15s ease;
+}
+
+.card:hover .title {
+  transform: translateY(-2px);
 }
 
 .body {

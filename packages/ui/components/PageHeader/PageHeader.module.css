@@ -1,6 +1,9 @@
 .header {
-  padding: var(--space-xl) var(--section-px) var(--space-l);
-  max-width: 44rem;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--space-l) var(--section-px);
+  max-width: calc(var(--content-max-width) + (var(--section-px) * 2));
+  margin-inline: auto;
 }
 
 .heading {
@@ -9,6 +12,7 @@
   letter-spacing: -0.01em;
   font-size: var(--fs-display-sm);
   line-height: 1.2;
+  max-width: 44rem;
   margin: 0 0 var(--space-s);
 }
 
@@ -22,5 +26,6 @@
   font-size: var(--fs-lede);
   color: var(--color-ink-soft);
   line-height: 1.6;
+  max-width: 44rem;
   margin: 0;
 }

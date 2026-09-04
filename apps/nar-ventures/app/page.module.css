@@ -1,6 +1,9 @@
 .hero {
+  box-sizing: border-box;
+  width: 100%;
   padding: var(--space-xl) var(--section-px) var(--space-l);
-  max-width: 58rem;
+  max-width: calc(var(--content-max-width) + (var(--section-px) * 2));
+  margin-inline: auto;
 }
 
 .heroHead {
@@ -9,6 +12,7 @@
   letter-spacing: -0.01em;
   font-size: var(--fs-display-lg);
   line-height: 1.15;
+  max-width: 58rem;
   margin: 0 0 var(--space-m);
 }
 
@@ -39,14 +43,25 @@
 }
 
 .block {
-  padding: var(--space-l) var(--section-px);
+  padding-block: var(--space-l);
   border-bottom: 1px solid var(--color-hairline);
+}
+
+.blockInner {
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: var(--section-px);
+  max-width: calc(var(--content-max-width) + (var(--section-px) * 2));
+  margin-inline: auto;
 }
 
 .pillars {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: var(--space-m);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .capabilities {

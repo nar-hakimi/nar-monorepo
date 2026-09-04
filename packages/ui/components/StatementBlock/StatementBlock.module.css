@@ -1,10 +1,11 @@
 .statement {
   background: var(--color-ink);
-  padding: var(--space-2xl) var(--section-px);
+  padding: var(--space-l) var(--section-px);
 }
 
 .inner {
-  max-width: 42rem;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 }
 
 .eyebrow {
@@ -20,8 +21,9 @@
 }
 
 .rule {
-  width: 22px;
-  height: 1px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
   background: var(--color-signal);
   display: inline-block;
 }
@@ -33,6 +35,7 @@
   line-height: 1.15;
   color: var(--color-paper-raised);
   margin: 0;
+  max-width: 42rem;
 }
 
 .headline :global(em) {

@@ -1,0 +1,39 @@
+.panel {
+  background: var(--color-ink);
+  border: 1px solid var(--color-hairline);
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.markerRing {
+  fill: none;
+  stroke: var(--color-signal);
+  stroke-width: 1;
+  opacity: 0.4;
+}
+
+.markerDot {
+  fill: var(--color-signal);
+}
+
+.markerLine {
+  stroke: var(--color-signal);
+  stroke-width: 1;
+  opacity: 0.6;
+}
+
+.markerLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--color-paper);
+  paint-order: stroke;
+  stroke: var(--color-ink);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}

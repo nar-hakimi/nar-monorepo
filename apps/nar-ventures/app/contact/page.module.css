@@ -1,0 +1,87 @@
+.block {
+  padding-block: var(--space-l);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.blockInner {
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: var(--section-px);
+  max-width: calc(var(--content-max-width) + (var(--section-px) * 2));
+  margin-inline: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 42rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-s);
+}
+
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statusMessage {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-ink-soft);
+  margin: var(--space-s) 0 0;
+}
+
+.statusMessageError {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-signal);
+  margin: var(--space-s) 0 0;
+}
+
+/* ---------- Calendly (disabled) ----------
+   Uncomment these and remove .form's max-width (or adjust it) if
+   Calendly gets turned back on. Also switch .blockInner in page.tsx
+   back to `${styles.blockInner} ${styles.layout}` and un-comment the
+   .layout rule below.
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calendlyCard {
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-hairline);
+  padding: var(--space-m);
+}
+
+.calendlyLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  margin: 0 0 var(--space-2xs);
+}
+
+.calendlyBody {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  margin: 0 0 var(--space-s);
+}
+*/

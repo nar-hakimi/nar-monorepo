@@ -29,7 +29,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             { label: "How We Work", href: "/how-we-work" },
             { label: "Services", href: "/services" },
             { label: "About", href: "/about" },
-            { label: "Insights", href: "/insights" },
           ]}
           ctaLabel="Contact"
           ctaHref="/contact"
@@ -52,7 +51,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               links: [
                 { label: 'Services', href: '/services' },
                 { label: 'About', href: '/about' },
-                { label: 'Insights', href: '/insights' },
               ],
             },
             {

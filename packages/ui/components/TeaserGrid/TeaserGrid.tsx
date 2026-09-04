@@ -5,6 +5,7 @@ import styles from './TeaserGrid.module.css';
 export type TeaserItem = {
   tag: string;
   title: string;
+  body?: string;
   href?: string;
 };
 
@@ -16,7 +17,7 @@ type TeaserGridProps = {
 
 export function TeaserGrid({ items, columns = 3, className }: TeaserGridProps) {
   return (
-    <div
+    <ul
       className={[styles.grid, className].filter(Boolean).join(' ')}
       style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}
     >
@@ -25,19 +26,22 @@ export function TeaserGrid({ items, columns = 3, className }: TeaserGridProps) {
           <>
             <div className={styles.tag}>{item.tag}</div>
             <h4 className={styles.title}>{item.title}</h4>
+            {item.body && <p className={styles.body}>{item.body}</p>}
           </>
         );
 
-        return item.href ? (
-          <Link key={item.title} href={item.href} className={styles.card}>
-            {content}
-          </Link>
-        ) : (
-          <div key={item.title} className={styles.card}>
-            {content}
-          </div>
+        return (
+          <li key={item.title} className={styles.item}>
+            {item.href ? (
+              <Link href={item.href} className={styles.card}>
+                {content}
+              </Link>
+            ) : (
+              <div className={styles.card}>{content}</div>
+            )}
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 }

@@ -1,10 +1,24 @@
 .nav {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 55;
+  background: var(--color-paper);
+  padding: var(--space-s) var(--section-px);
+  border-bottom: 1px solid var(--color-hairline);
+  transform: translateY(0);
+  transition: transform 0.25s ease;
+}
+
+.navHidden {
+  transform: translateY(-100%);
+}
+
+.navInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-s) var(--section-px);
-  border-bottom: 1px solid var(--color-hairline);
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 }
 
 .wordmark {
@@ -14,7 +28,7 @@
   letter-spacing: 0.02em;
   color: var(--color-ink);
   text-decoration: none;
-  z-index: 60;
+  z-index: 30;
 }
 
 .dot {
@@ -36,11 +50,19 @@
   text-transform: uppercase;
   color: var(--color-ink-soft);
   text-decoration: none;
+  white-space: nowrap;
   transition: color 0.15s ease;
 }
+
 .link:hover,
 .link:focus-visible {
   color: var(--color-signal);
+}
+
+.linkActive {
+  color: var(--color-signal);
+  border-bottom: 1px solid var(--color-signal);
+  padding-bottom: 2px;
 }
 
 .cta {
@@ -78,27 +100,44 @@
 .burgerLineBottom.burgerLineOpenBottom { top: 9px; transform: rotate(-45deg); }
 
 /* ---------- drawer ---------- */
-.drawer {
+.backdrop {
   position: fixed;
   inset: 0;
+  z-index: 40;
+  background: rgba(19, 18, 17, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s;
+}
+
+.backdropOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
   z-index: 50;
+  width: min(65vw, 300px);
   background: var(--color-paper);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   gap: var(--space-l);
-  padding: var(--space-xl) var(--section-px);
-  transform: translateY(-100%);
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+  padding: var(--space-xl) var(--space-m);
+  border-left: 1px solid var(--color-hairline);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
 }
 
 .drawerOpen {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
+  transform: translateX(0);
 }
 
 .drawerLinks {
@@ -122,11 +161,15 @@
   color: var(--color-signal);
 }
 
+.drawerLinkActive {
+  color: var(--color-signal);
+}
+
 .drawerCta {
   align-self: flex-start;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1023px) {
   .links,
   .cta {
     display: none;
@@ -136,7 +179,7 @@
   }
 }
 
-@media (min-width: 861px) {
+@media (min-width: 1024px) {
   .drawer {
     display: none;
   }

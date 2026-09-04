@@ -57,9 +57,11 @@ export function Footer({
       </div>
 
       <div className={styles.bottom}>
-        <p className={styles.copyright}>
-          © {year} {copyrightName}. All rights reserved.
-        </p>
+        <div className={styles.bottomInner}>
+          <p className={styles.copyright}>
+            © {year} {copyrightName}. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

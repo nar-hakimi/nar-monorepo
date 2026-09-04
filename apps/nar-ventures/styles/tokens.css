@@ -32,28 +32,37 @@
 
   /* ============================================================
      FLUID TYPE SCALE
-     clamp(min, preferred, max), generated for a 375px \u2192 1440px
+     clamp(min, preferred, max), generated for a 375px → 2560px
      viewport range using the intrinsic/Utopia method:
 
        slope         = (maxPx - minPx) / (maxVw - minVw)
        vw-coefficient = slope * 100
        intersection   = (minPx - slope * minVw) / 16      [in rem]
 
-     Re-derive with https://utopia.fyi/type/calculator if a role's
-     min/max changes — don't hand-edit the vw coefficients below.
+     Extended a second time from 375→1920 to 375→2560 to match a
+     2560×1440 monitor at 100% Windows scaling (the browser reports
+     the full 2560px as usable width at that scaling, so the previous
+     1920px ceiling was plateauing before reaching the actual edge of
+     the screen — same class of issue as the original 1440px
+     plateau). Minimums (375px) are still unchanged from the original
+     scale; only the top end moved again. Re-derive with
+     https://utopia.fyi/type/calculator if a role's min/max changes —
+     don't hand-edit the vw coefficients below.
   ============================================================ */
-  --fs-eyebrow:    clamp(0.6875rem, 0.665rem + 0.09vw, 0.75rem);   /* 11 -> 12px  — labels, meta, nav */
-  --fs-body:       clamp(1rem,      0.965rem + 0.16vw, 1.0625rem); /* 16 -> 17px  — running copy */
-  --fs-lede:       clamp(0.9375rem, 0.88rem + 0.28vw, 1.0625rem);  /* 15 -> 17px  — section intros */
-  --fs-h3:         clamp(1.25rem,   1.13rem + 0.56vw, 1.4375rem);  /* 20 -> 23px  — card/pillar headings */
-  --fs-h2:         clamp(1.75rem,   1.5rem + 1.13vw, 2.125rem);    /* 28 -> 34px  — section headings */
-  --fs-display-sm: clamp(2rem,      1.62rem + 1.69vw, 2.625rem);   /* 32 -> 42px  — interior page headers */
-  --fs-display-lg: clamp(2rem,      1.3rem + 3.19vw, 3.125rem);    /* 32 -> 50px  — homepage hero */
+  --fs-eyebrow:    clamp(0.6875rem, 0.655rem + 0.14vw, 0.875rem);   /* 11 -> 14px  — labels, meta, nav */
+  --fs-body:       clamp(1rem,      0.968rem + 0.14vw, 1.1875rem);  /* 16 -> 19px  — running copy */
+  --fs-lede:       clamp(0.9375rem, 0.873rem + 0.27vw, 1.3125rem);  /* 15 -> 21px  — section intros */
+  --fs-h3:         clamp(1.25rem,   1.153rem + 0.41vw, 1.8125rem);  /* 20 -> 29px  — card/pillar headings */
+  --fs-h2:         clamp(1.75rem,   1.589rem + 0.69vw, 2.6875rem);  /* 28 -> 43px  — section headings */
+  --fs-display-sm: clamp(2rem,      1.764rem + 1.01vw, 3.375rem);   /* 32 -> 54px  — interior page headers */
+  --fs-display-lg: clamp(2rem,      1.635rem + 1.56vw, 4.125rem);   /* 32 -> 66px  — homepage hero */
 
   /* ============================================================
      FLUID SPACE SCALE
-     Same clamp methodology as type. Component padding, margin, and
-     gap should always reference these — never a raw px value.
+     Same clamp methodology as type, still on the original 375→1440
+     range — not extended alongside the type scale above. Extending
+     this too would change section padding/gaps site-wide; revisit
+     only if wide-desktop layouts need it as well.
   ============================================================ */
   --space-3xs: clamp(0.375rem, 0.34rem + 0.19vw, 0.5rem);   /* 6   -> 8px   */
   --space-2xs: clamp(0.5rem,   0.44rem + 0.28vw, 0.625rem); /* 8   -> 10px  */
@@ -67,6 +76,6 @@
   /* ============================================================
      LAYOUT
   ============================================================ */
-  --content-max-width: 1160px;
+  --content-max-width: 1440px;
   --section-px: var(--space-l); /* horizontal section padding, fluid */
 }

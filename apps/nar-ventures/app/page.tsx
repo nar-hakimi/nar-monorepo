@@ -30,41 +30,51 @@ export default function Home() {
       </section>
 
       <section className={styles.block}>
-        <SectionHeader
-          eyebrow="Brand Pillars"
-          heading="Access. Commercial intelligence. Execution."
-        />
-        <div className={styles.pillars}>
-          <NumberedCard number="01 — ACCESS" title="Access">
-            Knowing the right operators, counterparties, buyers,
-            manufacturers, distributors, and strategic partners.
-          </NumberedCard>
-          <NumberedCard number="02 — INTELLIGENCE" title="Commercial Intelligence">
-            Understanding market dynamics, pricing, margins, supply,
-            demand, and where value can realistically be created.
-          </NumberedCard>
-          <NumberedCard number="03 — EXECUTION" title="Execution">
-            Staying involved beyond strategy or introductions —
-            structuring, negotiating, and moving opportunities into
-            signed business.
-          </NumberedCard>
+        <div className={styles.blockInner}>
+          <SectionHeader
+            eyebrow="Brand Pillars"
+            heading="Access. Commercial intelligence. Execution."
+          />
+          <ol className={styles.pillars}>
+            <li>
+              <NumberedCard number="01. ACCESS" title="Access">
+                Knowing the right operators, counterparties, buyers,
+                manufacturers, distributors, and strategic partners.
+              </NumberedCard>
+            </li>
+            <li>
+              <NumberedCard number="02. INTELLIGENCE" title="Commercial Intelligence">
+                Understanding market dynamics, pricing, margins, supply,
+                demand, and where value can realistically be created.
+              </NumberedCard>
+            </li>
+            <li>
+              <NumberedCard number="03. EXECUTION" title="Execution">
+                Staying involved beyond strategy or introductions:
+                structuring, negotiating, and moving opportunities into
+                signed business.
+              </NumberedCard>
+            </li>
+          </ol>
         </div>
       </section>
 
-      <section className={`${styles.block} ${styles.capabilities}`}>
-        <MediaBlock aspectRatio="4/3" />
-        <div>
-          <SectionHeader
-            eyebrow="Capabilities"
-            heading={
-              <>
-                The recommendation comes with the introduction{" "}
-                <em>attached.</em>
-              </>
-            }
-            lede="We identify where value can be created across the transaction, assess strategic fit, align the economics, and stay actively involved through negotiation and execution."
-          />
-          <Button variant="secondary" href="/how-we-work">Explore capabilities</Button>
+      <section className={styles.block}>
+        <div className={`${styles.blockInner} ${styles.capabilities}`}>
+          <MediaBlock aspectRatio="4/3" />
+          <div>
+            <SectionHeader
+              eyebrow="Capabilities"
+              heading={
+                <>
+                  The recommendation comes with the introduction{" "}
+                  <em>attached.</em>
+                </>
+              }
+              lede="We identify where value can be created across the transaction, assess strategic fit, align the economics, and stay actively involved through negotiation and execution."
+            />
+            <Button variant="secondary" href="/how-we-work">Explore capabilities</Button>
+          </div>
         </div>
       </section>
 
@@ -76,26 +86,30 @@ export default function Home() {
       </StatementBlock>
 
       <section className={styles.block}>
-        <div className={styles.teaserTop}>
-          <SectionHeader eyebrow="Where We Operate" heading="Markets" />
-          <a href="/markets" className={styles.viewAll}>View all markets</a>
+        <div className={styles.blockInner}>
+          <div className={styles.teaserTop}>
+            <SectionHeader eyebrow="Where We Operate" heading="Markets" />
+            <a href="/markets" className={styles.viewAll}>View all markets</a>
+          </div>
+          <TeaserGrid
+            columns={3}
+            items={[
+              { tag: "Market", title: "United States", href: "/markets#us" },
+              { tag: "Market", title: "Europe", href: "/markets#europe" },
+              { tag: "Market", title: "Emerging & International", href: "/markets#emerging" },
+            ]}
+          />
         </div>
-        <TeaserGrid
-          columns={3}
-          items={[
-            { tag: "Market", title: "United States", href: "/markets#us" },
-            { tag: "Market", title: "Europe", href: "/markets#europe" },
-            { tag: "Market", title: "Emerging & International", href: "/markets#emerging" },
-          ]}
-        />
       </section>
 
-      <section className={`${styles.block} ${styles.closing}`}>
-        <Eyebrow align="center">Get Started</Eyebrow>
-        <h2 className={styles.closingHead}>
-          Let&apos;s talk about what&apos;s <em>next.</em>
-        </h2>
-        <Button variant="primary" href="/contact">Work With Us</Button>
+      <section className={styles.block}>
+        <div className={`${styles.blockInner} ${styles.closing}`}>
+          <Eyebrow align="center">Get Started</Eyebrow>
+          <h2 className={styles.closingHead}>
+            Let&apos;s talk about what&apos;s <em>next.</em>
+          </h2>
+          <Button variant="primary" href="/contact">Work With Us</Button>
+        </div>
       </section>
     </main>
   );
