@@ -43,6 +43,10 @@
   margin: var(--space-s) 0 0;
 }
 
+.intro {
+  padding-top: 0;
+}
+
 /* ---------- Calendly (disabled) ----------
    Uncomment these and remove .form's max-width (or adjust it) if
    Calendly gets turned back on. Also switch .blockInner in page.tsx

@@ -85,7 +85,7 @@ export default function ContactPage() {
         lede="Tell us about your company, your market, and what you're looking to accomplish. Most engagements begin with a conversation."
       />
 
-      <section className={styles.block}>
+      <section className={`${styles.block} ${styles.intro}`}>
         <div className={styles.blockInner}>
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
