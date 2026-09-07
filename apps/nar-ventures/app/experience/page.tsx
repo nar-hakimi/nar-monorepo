@@ -79,7 +79,7 @@ export default function ExperiencePage() {
         lede="A sample of the kinds of relationships and outcomes we've helped build. Details are anonymized to protect client and partner confidentiality."
       />
 
-      <section className={styles.block}>
+      <section className={`${styles.block} ${styles.intro}`}>
         <div className={styles.blockInner}>
           <div className={styles.filters} role="group" aria-label="Filter by category">
             <Tag active={selected === null} onClick={() => setSelected(null)}>

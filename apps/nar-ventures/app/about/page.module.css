@@ -64,3 +64,12 @@
   font-style: italic;
   color: var(--color-signal);
 }
+
+.founderName {
+  margin-top: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

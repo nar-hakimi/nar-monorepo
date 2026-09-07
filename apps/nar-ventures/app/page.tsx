@@ -61,7 +61,11 @@ export default function Home() {
 
       <section className={styles.block}>
         <div className={`${styles.blockInner} ${styles.capabilities}`}>
-          <MediaBlock aspectRatio="4/3" />
+          <MediaBlock
+            aspectRatio="4/3"
+            src="https://res.cloudinary.com/gwyqp12n/image/upload/v1788776531/placeholder--img-home.webp"
+            alt="Placeholder image — not final photography"
+          />
           <div>
             <SectionHeader
               eyebrow="Capabilities"

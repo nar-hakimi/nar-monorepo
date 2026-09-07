@@ -30,7 +30,7 @@ export default function ServicesPage() {
         lede="Most engagements are customized, beginning with an initial conversation to understand your company, market, objective, and commercial challenge."
       />
 
-      <section className={styles.block}>
+      <section className={`${styles.block} ${styles.intro}`}>
         <div className={styles.blockInner}>
           {/*
             No pricing shown anywhere on this page, and no M&A framing —

@@ -52,12 +52,21 @@ export default function AboutPage() {
 
       <section className={styles.block}>
         <div className={`${styles.blockInner} ${styles.founder}`}>
-          {/*
-            TODO: placeholder — MediaBlock renders as a plain dark box
-            until Nar selects a real headshot (see REPO_STRUCTURE.md's
-            known gaps and TASKS.md open questions).
-          */}
-          <MediaBlock aspectRatio="4/5" />
+          <div>
+            {/*
+              TODO: placeholder — MediaBlock renders as a plain dark box
+              until Nar selects a real headshot (see REPO_STRUCTURE.md's
+              known gaps and TASKS.md open questions).
+            */}
+            <MediaBlock aspectRatio="4/5" />
+            {/*
+              TODO: name/title placeholder — CONTENT.md never states Nar's
+              full name or an exact title anywhere in the Founder background
+              copy. Using "Nar" alone since that's the only name CONTENT.md
+              uses. Flag for her confirmation before treating as final.
+            */}
+            <p className={styles.founderName}>Nar</p>
+          </div>
           <div>
             <Eyebrow>Founder</Eyebrow>
             <p className={styles.founderBody}>

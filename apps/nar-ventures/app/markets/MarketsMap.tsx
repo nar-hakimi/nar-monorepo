@@ -8,11 +8,22 @@ import styles from './MarketsMap.module.css';
 // for a decorative map at this size. Free, open-source, no licensing cost.
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
-const markers: { label: string; coordinates: [number, number] }[] = [
+const markers: {
+  label: string;
+  coordinates: [number, number];
+  offsetX?: number;
+  offsetY?: number;
+}[] = [
   { label: 'United States', coordinates: [-74.0, 40.7] }, // New York — NAR's actual anchor market per CONTENT.md
   { label: 'Europe', coordinates: [8.68, 50.11] }, // Central Europe (near Germany)
-  { label: 'Emerging & Intl.', coordinates: [20, 2] }, // Central Africa
+  // Longest label of the three — given extra offset so it doesn't crowd
+  // its own marker at this zoom level (was sitting flush against the
+  // dot/ring at mobile widths with the shared -42/-48 offset).
+  { label: 'Emerging & Intl.', coordinates: [20, 2], offsetX: -60, offsetY: -16 },
 ];
+
+const DEFAULT_LABEL_OFFSET = -48;
+const DEFAULT_Y_OFFSET = -16;
 
 // react-simple-maps' <Geography> requires its own style={{ default, hover,
 // pressed }} object rather than a className — hover/pressed match default
@@ -69,16 +80,28 @@ export function MarketsMap() {
           }
         </Geographies>
 
-        {markers.map((m) => (
-          <Marker key={m.label} coordinates={m.coordinates}>
-            <circle r={12} className={styles.markerRing} />
-            <circle r={5} className={styles.markerDot} />
-            <line x1={0} y1={0} x2={-42} y2={-16} className={styles.markerLine} />
-            <text x={-48} y={-16} dy={4} textAnchor="end" className={styles.markerLabel}>
-              {m.label}
-            </text>
-          </Marker>
-        ))}
+        {markers.map((m) => {
+          const labelX = m.offsetX ?? DEFAULT_LABEL_OFFSET;
+          const lineX = labelX + 6; // line ends 6px short of the label, same gap as the default
+          const yOffset = m.offsetY ?? DEFAULT_Y_OFFSET;
+
+          return (
+            <Marker key={m.label} coordinates={m.coordinates}>
+              <circle r={12} className={styles.markerRing} />
+              <circle r={5} className={styles.markerDot} />
+              <line x1={0} y1={0} x2={lineX} y2={yOffset} className={styles.markerLine} />
+              <text
+                x={labelX}
+                y={yOffset}
+                dy={4}
+                textAnchor="end"
+                className={styles.markerLabel}
+              >
+                {m.label}
+              </text>
+            </Marker>
+          );
+        })}
       </ComposableMap>
     </div>
   );

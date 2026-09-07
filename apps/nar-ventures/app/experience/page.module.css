@@ -76,3 +76,7 @@
   font-style: italic;
   color: var(--color-signal);
 }
+
+.intro {
+  padding-top: 0;
+}
