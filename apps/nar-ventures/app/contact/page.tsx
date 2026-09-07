@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 // import Script from 'next/script'; // uncomment when Calendly is turned back on
-import { PageHeader, FormField, Button } from '@nar/ui';
+import { PageHeader, FormField, Button, Reveal } from '@nar/ui';
 import styles from './page.module.css';
 
 // --- Calendly (currently disabled — Nar isn't using a booking mechanism
@@ -85,7 +85,7 @@ export default function ContactPage() {
         lede="Tell us about your company, your market, and what you're looking to accomplish. Most engagements begin with a conversation."
       />
 
-      <section className={`${styles.block} ${styles.intro}`}>
+      <Reveal as="section" className={`${styles.block} ${styles.intro}`}>
         <div className={styles.blockInner}>
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
@@ -131,7 +131,7 @@ export default function ContactPage() {
             </Button>
           </aside> */}
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

@@ -1,4 +1,4 @@
-import { PageHeader, Eyebrow, TeaserGrid, Button } from '@nar/ui';
+import { PageHeader, Eyebrow, TeaserGrid, Button, Reveal } from '@nar/ui';
 import type { TeaserItem } from '@nar/ui';
 import { MarketsMap } from './MarketsMap';
 import styles from './page.module.css';
@@ -30,19 +30,19 @@ export default function MarketsPage() {
         lede="NAR Ventures operates where the relationships and commercial opportunity are strongest, not everywhere at once."
       />
 
-      <section className={`${styles.block} ${styles.mapBlock}`}>
+      <Reveal as="section" className={`${styles.block} ${styles.mapBlock}`}>
         <div className={styles.blockInner}>
           <MarketsMap />
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={styles.blockInner}>
           <TeaserGrid items={regions} columns={3} />
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={`${styles.blockInner} ${styles.closing}`}>
           <Eyebrow align="center">Get Started</Eyebrow>
           <h2 className={styles.closingHead}>
@@ -50,7 +50,7 @@ export default function MarketsPage() {
           </h2>
           <Button variant="primary" href="/contact">Work With Us</Button>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

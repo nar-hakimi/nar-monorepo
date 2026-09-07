@@ -1,4 +1,4 @@
-import { PageHeader, Eyebrow, Button } from '@nar/ui';
+import { PageHeader, Eyebrow, Button, Reveal } from '@nar/ui';
 import styles from './page.module.css';
 
 const services = [
@@ -30,7 +30,7 @@ export default function ServicesPage() {
         lede="Most engagements are customized, beginning with an initial conversation to understand your company, market, objective, and commercial challenge."
       />
 
-      <section className={`${styles.block} ${styles.intro}`}>
+      <Reveal as="section" className={`${styles.block} ${styles.intro}`}>
         <div className={styles.blockInner}>
           {/*
             No pricing shown anywhere on this page, and no M&A framing —
@@ -45,9 +45,9 @@ export default function ServicesPage() {
             ))}
           </ul>
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={`${styles.blockInner} ${styles.closing}`}>
           <Eyebrow align="center">Get Started</Eyebrow>
           <h2 className={styles.closingHead}>
@@ -55,7 +55,7 @@ export default function ServicesPage() {
           </h2>
           <Button variant="primary" href="/contact">Work With Us</Button>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

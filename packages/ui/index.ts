@@ -14,3 +14,4 @@ export { StatementBlock } from './components/StatementBlock/StatementBlock';
 export { Tag } from './components/Tag/Tag';
 export { FormField } from './components/FormField/FormField';
 export { PageHeader } from './components/PageHeader/PageHeader';
+export { Reveal } from './components/Reveal/Reveal';

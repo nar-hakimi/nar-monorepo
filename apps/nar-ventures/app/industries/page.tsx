@@ -1,4 +1,4 @@
-import { PageHeader, Eyebrow, SectionHeader, TeaserGrid, Button } from '@nar/ui';
+import { PageHeader, Eyebrow, SectionHeader, TeaserGrid, Button, Reveal } from '@nar/ui';
 import type { TeaserItem } from '@nar/ui';
 import styles from './page.module.css';
 
@@ -29,7 +29,7 @@ export default function IndustriesPage() {
         lede="Our operating experience spans regulated and emerging industries, consumer brands, wellness, manufacturing, distribution, and retail. Below is a closer look at where our network runs deepest."
       />
 
-      <section className={styles.cannabis}>
+      <Reveal as="section" className={styles.cannabis}>
         <div className={styles.cannabisInner}>
           <Eyebrow>Cannabis</Eyebrow>
           <p className={styles.cannabisLead}>
@@ -48,9 +48,9 @@ export default function IndustriesPage() {
             inside cannabis or adjacent to it.
           </p>
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.industriesGrid}>
+      <Reveal as="section" className={styles.industriesGrid}>
         <div className={styles.industriesGridInner}>
           <SectionHeader
             eyebrow="Additional Areas of Expertise"
@@ -58,9 +58,9 @@ export default function IndustriesPage() {
           />
           <TeaserGrid items={industries} columns={3} />
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={`${styles.blockInner} ${styles.closing}`}>
           <Eyebrow align="center">Get Started</Eyebrow>
           <h2 className={styles.closingHead}>
@@ -68,7 +68,7 @@ export default function IndustriesPage() {
           </h2>
           <Button variant="primary" href="/contact">Work With Us</Button>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

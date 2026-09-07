@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { PageHeader, Tag, Eyebrow, Button } from '@nar/ui';
+import { PageHeader, Tag, Eyebrow, Button, Reveal } from '@nar/ui';
 import styles from './page.module.css';
 
 type Entry = { text: string; category: string };
@@ -79,7 +79,7 @@ export default function ExperiencePage() {
         lede="A sample of the kinds of relationships and outcomes we've helped build. Details are anonymized to protect client and partner confidentiality."
       />
 
-      <section className={`${styles.block} ${styles.intro}`}>
+      <Reveal as="section" className={`${styles.block} ${styles.intro}`}>
         <div className={styles.blockInner}>
           <div className={styles.filters} role="group" aria-label="Filter by category">
             <Tag active={selected === null} onClick={() => setSelected(null)}>
@@ -104,9 +104,9 @@ export default function ExperiencePage() {
             )}
           </ul>
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={`${styles.blockInner} ${styles.closing}`}>
           <Eyebrow align="center">Get Started</Eyebrow>
           <h2 className={styles.closingHead}>
@@ -114,7 +114,7 @@ export default function ExperiencePage() {
           </h2>
           <Button variant="primary" href="/contact">Work With Us</Button>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

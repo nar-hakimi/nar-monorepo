@@ -47,6 +47,24 @@
   padding-top: 0;
 }
 
+.field {
+  display: block;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-ink);
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-hairline);
+  padding: var(--space-xs);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--color-signal);
+  box-shadow: 0 0 0 3px rgba(158, 27, 50, 0.12); /* signal red at low opacity — tokens are hex-only, so this is #9E1B32 as rgba */
+}
+
 /* ---------- Calendly (disabled) ----------
    Uncomment these and remove .form's max-width (or adjust it) if
    Calendly gets turned back on. Also switch .blockInner in page.tsx

@@ -6,6 +6,7 @@ import {
   MediaBlock,
   StatementBlock,
   TeaserGrid,
+  Reveal,
 } from "@nar/ui";
 import styles from "./page.module.css";
 
@@ -29,7 +30,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={styles.blockInner}>
           <SectionHeader
             eyebrow="Brand Pillars"
@@ -57,9 +58,9 @@ export default function Home() {
             </li>
           </ol>
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={`${styles.blockInner} ${styles.capabilities}`}>
           <MediaBlock
             aspectRatio="4/3"
@@ -80,7 +81,7 @@ export default function Home() {
             <Button variant="secondary" href="/how-we-work">Explore capabilities</Button>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       <StatementBlock
         eyebrow="Where This Shows Up"
@@ -89,7 +90,7 @@ export default function Home() {
         Twenty years in rooms most firms <em>never reach.</em>
       </StatementBlock>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={styles.blockInner}>
           <div className={styles.teaserTop}>
             <SectionHeader eyebrow="Where We Operate" heading="Markets" />
@@ -104,9 +105,9 @@ export default function Home() {
             ]}
           />
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={`${styles.blockInner} ${styles.closing}`}>
           <Eyebrow align="center">Get Started</Eyebrow>
           <h2 className={styles.closingHead}>
@@ -114,7 +115,7 @@ export default function Home() {
           </h2>
           <Button variant="primary" href="/contact">Work With Us</Button>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

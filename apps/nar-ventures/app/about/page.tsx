@@ -1,4 +1,4 @@
-import { PageHeader, MediaBlock, Eyebrow, StatementBlock, Button } from '@nar/ui';
+import { PageHeader, MediaBlock, Eyebrow, StatementBlock, Button, Reveal } from '@nar/ui';
 import styles from './page.module.css';
 
 // TODO: Per CONTENT.md — this whole page's copy is a placeholder pending
@@ -19,7 +19,7 @@ export default function AboutPage() {
         lede="NAR Ventures grew organically out of the work of building brands, developing supply relationships, and putting commercial deals together."
       />
 
-      <section className={`${styles.block} ${styles.storyBlock}`}>
+      <Reveal as="section" className={`${styles.block} ${styles.storyBlock}`}>
         <div className={styles.blockInner}>
           <div className={styles.story}>
             <p>
@@ -39,7 +39,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/*
         TODO: eyebrow invented — CONTENT.md doesn't specify one for this
@@ -50,7 +50,7 @@ export default function AboutPage() {
         commercial intelligence and <em>hands-on execution.</em>
       </StatementBlock>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={`${styles.blockInner} ${styles.founder}`}>
           <div>
             {/*
@@ -93,9 +93,9 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={`${styles.blockInner} ${styles.closing}`}>
           <Eyebrow align="center">Get Started</Eyebrow>
           <h2 className={styles.closingHead}>
@@ -103,7 +103,7 @@ export default function AboutPage() {
           </h2>
           <Button variant="primary" href="/contact">Work With Us</Button>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

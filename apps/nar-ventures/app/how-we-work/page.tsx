@@ -1,4 +1,4 @@
-import { PageHeader, Eyebrow, NumberedCard, StatementBlock, Button } from '@nar/ui';
+import { PageHeader, Eyebrow, NumberedCard, StatementBlock, Button, Reveal } from '@nar/ui';
 import styles from './page.module.css';
 
 export default function HowWeWorkPage() {
@@ -25,7 +25,7 @@ export default function HowWeWorkPage() {
         The recommendation comes with the introduction <em>attached.</em>
       </StatementBlock>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={styles.blockInner}>
           <ol className={styles.process}>
             <li>
@@ -63,9 +63,9 @@ export default function HowWeWorkPage() {
             </li>
           </ol>
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <div className={`${styles.blockInner} ${styles.closing}`}>
           <Eyebrow align="center">Get Started</Eyebrow>
           <h2 className={styles.closingHead}>
@@ -73,7 +73,7 @@ export default function HowWeWorkPage() {
           </h2>
           <Button variant="primary" href="/contact">Work With Us</Button>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

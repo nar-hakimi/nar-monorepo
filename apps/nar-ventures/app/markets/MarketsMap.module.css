@@ -16,6 +16,29 @@
   opacity: 0.4;
 }
 
+@keyframes markerPulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+.markerRing {
+  fill: none;
+  stroke: var(--color-signal);
+  stroke-width: 1;
+  opacity: 0.4;
+  animation: markerPulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .markerRing {
+    animation: none;
+  }
+}
+
 .markerDot {
   fill: var(--color-signal);
 }

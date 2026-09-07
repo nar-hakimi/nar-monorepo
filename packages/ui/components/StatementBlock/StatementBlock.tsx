@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Reveal } from '../Reveal/Reveal';
 import styles from './StatementBlock.module.css';
 
 type StatementBlockProps = {
@@ -11,7 +12,7 @@ type StatementBlockProps = {
 
 export function StatementBlock({ eyebrow, children, sub, className }: StatementBlockProps) {
   return (
-    <section className={[styles.statement, className].filter(Boolean).join(' ')}>
+    <Reveal as="section" className={[styles.statement, className].filter(Boolean).join(' ')}>
       <div className={styles.inner}>
         {eyebrow && (
           <p className={styles.eyebrow}>
@@ -22,6 +23,6 @@ export function StatementBlock({ eyebrow, children, sub, className }: StatementB
         <h2 className={styles.headline}>{children}</h2>
         {sub && <p className={styles.sub}>{sub}</p>}
       </div>
-    </section>
+    </Reveal>
   );
 }
