@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 import { Reveal } from '../Reveal/Reveal';
 import styles from './StatementBlock.module.css';
 
@@ -7,10 +8,11 @@ type StatementBlockProps = {
   /** Pass JSX to use inline <em> for the signal-red italic phrase. */
   children: ReactNode;
   sub?: string;
+  link?: { label: string; href: string };
   className?: string;
 };
 
-export function StatementBlock({ eyebrow, children, sub, className }: StatementBlockProps) {
+export function StatementBlock({ eyebrow, children, sub, link, className }: StatementBlockProps) {
   return (
     <Reveal as="section" className={[styles.statement, className].filter(Boolean).join(' ')}>
       <div className={styles.inner}>
@@ -22,6 +24,11 @@ export function StatementBlock({ eyebrow, children, sub, className }: StatementB
         )}
         <h2 className={styles.headline}>{children}</h2>
         {sub && <p className={styles.sub}>{sub}</p>}
+        {link && (
+          <Link href={link.href} className={styles.link}>
+            {link.label}
+          </Link>
+        )}
       </div>
     </Reveal>
   );

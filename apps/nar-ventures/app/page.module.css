@@ -64,21 +64,10 @@
   padding: 0;
 }
 
-.capabilities {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  gap: var(--space-l);
-  align-items: center;
-}
-
 @media (max-width: 720px) {
   .pillars {
     grid-template-columns: 1fr;
     row-gap: var(--space-m);
-  }
-
-  .capabilities {
-    grid-template-columns: 1fr;
   }
 }
 

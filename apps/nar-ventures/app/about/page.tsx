@@ -1,95 +1,49 @@
-import { PageHeader, MediaBlock, Eyebrow, StatementBlock, Button, Reveal } from '@nar/ui';
+import { PageHeader, MediaBlock, Eyebrow, Button, Reveal } from '@nar/ui';
 import styles from './page.module.css';
-
-// TODO: Per CONTENT.md — this whole page's copy is a placeholder pending
-// headshot selection and final bio approval from Nar. Do not treat this
-// as final/publishable without her sign-off (see TASKS.md open questions).
 
 export default function AboutPage() {
   return (
     <main>
-      {/*
-        TODO: eyebrow invented — CONTENT.md doesn't specify one for this
-        page. Flag for Nar's confirmation, same status as other flagged
-        placeholder copy on this site.
-      */}
       <PageHeader
-        eyebrow="Who We Are"
-        heading="About"
-        lede="NAR Ventures grew organically out of the work of building brands, developing supply relationships, and putting commercial deals together."
+        eyebrow="About"
+        heading="Nar Hakimi"
       />
 
-      <Reveal as="section" className={`${styles.block} ${styles.storyBlock}`}>
-        <div className={styles.blockInner}>
-          <div className={styles.story}>
-            <p>
-              What started as individual introductions (operators looking
-              for supply, brands looking for manufacturing and
-              distribution, manufacturers looking for volume, retailers
-              looking for the right products) evolved into something
-              broader.
-            </p>
-            <p>
-              The real value was never simply access to a network. It was
-              understanding each side of a transaction well enough to
-              identify where an opportunity made commercial sense,
-              structure the economics properly, connect the right
-              parties, and stay involved until the relationship became
-              executable.
-            </p>
-          </div>
-        </div>
-      </Reveal>
+      <div className={styles.titleWrap}>
+        <Eyebrow>Founder &amp; CEO</Eyebrow>
+      </div>
 
-      {/*
-        TODO: eyebrow invented — CONTENT.md doesn't specify one for this
-        line, same status as other flagged placeholder copy on this page.
-      */}
-      <StatementBlock eyebrow="Our Model">
-        NAR Ventures formalized that model: relationships backed by
-        commercial intelligence and <em>hands-on execution.</em>
-      </StatementBlock>
-
-      <Reveal as="section" className={styles.block}>
+      <Reveal as="section" className={`${styles.block} ${styles.intro}`}>
         <div className={`${styles.blockInner} ${styles.founder}`}>
           <div>
-            {/*
-              TODO: placeholder — MediaBlock renders as a plain dark box
-              until Nar selects a real headshot (see REPO_STRUCTURE.md's
-              known gaps and TASKS.md open questions).
-            */}
             <MediaBlock aspectRatio="4/5" />
-            {/*
-              TODO: name/title placeholder — CONTENT.md never states Nar's
-              full name or an exact title anywhere in the Founder background
-              copy. Using "Nar" alone since that's the only name CONTENT.md
-              uses. Flag for her confirmation before treating as final.
-            */}
-            <p className={styles.founderName}>Nar</p>
           </div>
           <div>
-            <Eyebrow>Founder</Eyebrow>
             <p className={styles.founderBody}>
-              NAR Ventures is built on an operator-driven background
-              rather than a traditional consulting one: direct experience
-              across business development, brand building, wholesale
-              sales, sourcing, procurement, manufacturing, processing,
-              distribution, retail account development, pricing, margin
-              strategy, product commercialization, and strategic
-              partnerships.
+              I started in luxury fashion, building wholesale and
+              distribution for Dolce &amp; Gabbana, Michael Kors, alice +
+              olivia and Ramy Brook. It taught me the least glamorous and
+              most decisive part of consumer business. Who controls the
+              shelf. What a name is worth once it is on it. How to write
+              terms both sides still want to honor a year later.
             </p>
             <p className={styles.founderBody}>
-              As the founder of NAR New York, Nar has also built and
-              commercialized a consumer brand firsthand, from product
-              development and manufacturing relationships to
-              distribution, buyer outreach, retail placement, and market
-              growth.
+              I later founded NAR New York, my own cannabis brand, and
+              entered one of the most fragmented regulated consumer
+              markets in the country.
             </p>
             <p className={styles.founderBody}>
-              That operating experience allows for evaluating
-              opportunities from multiple sides of the table (brand,
-              manufacturer, supplier, distributor, retailer, and end
-              market) rather than from a single perspective.
+              NAR Ventures was built out of that. We advise on market
+              entry and strategic partnerships, structure brand and
+              manufacturing relationships, supply operators and brands,
+              and execute transactions across the United States and
+              Europe.
+            </p>
+            <p className={styles.founderBody}>
+              My foundation is in New York and New Jersey. I am currently
+              focused on European opportunities, including medical
+              supply and distribution in Germany, Switzerland and the
+              Czech Republic.
             </p>
           </div>
         </div>

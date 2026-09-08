@@ -3,10 +3,6 @@
   border-bottom: 1px solid var(--color-hairline);
 }
 
-.mapBlock {
-  padding-top: 0;
-}
-
 .blockInner {
   box-sizing: border-box;
   width: 100%;
@@ -15,73 +11,83 @@
   margin-inline: auto;
 }
 
-.tabs {
-  display: flex;
-  gap: var(--space-2xs);
-  margin-bottom: var(--space-m);
+.intro {
+  padding-top: 0;
 }
 
-.panel {
+.standalone {
+  font-family: var(--font-body);
+  font-size: var(--fs-lede);
+  color: var(--color-ink-soft);
+  line-height: 1.65;
   max-width: 44rem;
+  margin: 0;
 }
 
-.panelHeading {
+.subhead {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: var(--fs-h3);
   color: var(--color-ink);
+  max-width: 44rem;
   margin: 0 0 var(--space-s);
 }
 
-.panelBody {
+.body {
   font-family: var(--font-body);
   font-size: var(--fs-body);
   color: var(--color-ink-soft);
-  line-height: 1.7;
+  line-height: 1.65;
+  max-width: 44rem;
   margin: 0 0 var(--space-s);
 }
 
-.countryGrid {
+.sources {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.02em;
+  color: var(--color-gray);
+  line-height: 1.6;
+  max-width: 44rem;
+  margin: 0;
+}
+
+.permissions {
   list-style: none;
-  margin: var(--space-m) 0 0;
+  margin: 0 0 var(--space-m);
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: var(--space-s);
   max-width: 44rem;
 }
 
-@media (max-width: 560px) {
-  .countryGrid {
-    grid-template-columns: 1fr;
-  }
+.permissions li {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: flex-start;
 }
 
-.countryCard {
-  border-top: 1px solid var(--color-hairline);
-  padding-top: var(--space-xs);
+.marker {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-signal);
+  flex-shrink: 0;
+  margin-top: 0.5em;
 }
 
-.countryTitle {
-  font-family: var(--font-display);
-  font-weight: 500;
+.permissions p {
+  font-family: var(--font-body);
   font-size: var(--fs-body);
-  color: var(--color-ink);
-  margin: 0 0 var(--space-2xs);
-}
-
-.countryBody {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.04em;
-  color: var(--color-gray);
-  line-height: 1.5;
+  color: var(--color-ink-soft);
+  line-height: 1.6;
   margin: 0;
 }
 
-.countryCard:nth-child(-n+2) {
-  border-top: none;
-  padding-top: 0;
+.permissions strong {
+  color: var(--color-ink);
+  font-weight: 600;
 }
 
 .closing {

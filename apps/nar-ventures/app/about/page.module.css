@@ -11,20 +11,18 @@
   margin-inline: auto;
 }
 
-.storyBlock {
+.titleWrap {
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: var(--section-px);
+  max-width: calc(var(--content-max-width) + (var(--section-px) * 2));
+  margin-inline: auto;
+  margin-top: calc((var(--space-l) + var(--space-s)) * -1 + var(--space-2xs));
+  margin-bottom: var(--space-xs);
+}
+
+.intro {
   padding-top: 0;
-}
-
-.story {
-  max-width: 42rem;
-}
-
-.story p {
-  font-family: var(--font-body);
-  font-size: var(--fs-body);
-  color: var(--color-ink-soft);
-  line-height: 1.7;
-  margin: 0 0 var(--space-s);
 }
 
 .founder {
@@ -46,7 +44,7 @@
   color: var(--color-ink-soft);
   line-height: 1.7;
   max-width: 34rem;
-  margin: var(--space-s) 0 0;
+  margin: 0 0 var(--space-s);
 }
 
 .closing {
@@ -63,13 +61,4 @@
 .closingHead :global(em) {
   font-style: italic;
   color: var(--color-signal);
-}
-
-.founderName {
-  margin-top: var(--space-xs);
-  font-family: var(--font-mono);
-  font-size: var(--fs-eyebrow);
-  color: var(--color-ink-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }

@@ -32,7 +32,7 @@
 .statusMessage {
   font-family: var(--font-body);
   font-size: var(--fs-body);
-  color: var(--color-ink-soft);
+  color: var(--color-success);
   margin: var(--space-s) 0 0;
 }
 
@@ -107,3 +107,11 @@
   margin: 0 0 var(--space-s);
 }
 */
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

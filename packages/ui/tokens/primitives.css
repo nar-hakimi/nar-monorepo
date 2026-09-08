@@ -15,6 +15,7 @@
   --gray-700: #4A4844;
   --gray-200: #DCDAD2;
   --red-700:  #9E1B32;
+  --green-700: #2F5D3A;
 
   /* ---- Fluid scale reference ----
      All clamp() values in the semantic layer are generated against this

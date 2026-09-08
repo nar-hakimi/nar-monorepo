@@ -3,7 +3,6 @@ import {
   Button,
   SectionHeader,
   NumberedCard,
-  MediaBlock,
   StatementBlock,
   TeaserGrid,
   Reveal,
@@ -14,80 +13,73 @@ export default function Home() {
   return (
     <main>
       <section className={styles.hero}>
-        <Eyebrow>Strategic Growth &amp; Commercial Partnerships</Eyebrow>
+        <Eyebrow>Commercial Advisory &amp; Transactions · Regulated Markets</Eyebrow>
         <h1 className={styles.heroHead}>
-          We turn market access, relationships, and commercial intelligence
-          into <em>executable growth.</em>
+          We find and structure the opportunities that sit{" "}
+          <em>between markets.</em>
         </h1>
         <p className={styles.heroSub}>
-          We help brands, operators, manufacturers, and retailers unlock new
-          revenue channels and structure partnerships that improve
-          commercial performance.
+          NAR Ventures is a commercial advisory and transaction platform
+          working across regulated industries in the United States, Europe
+          and select international markets. Market entry, strategic
+          partnerships, supply, manufacturing and transactions.
         </p>
         <div className={styles.heroActions}>
           <Button variant="primary" href="/contact">Work With Us</Button>
-          <Button variant="secondary" href="/how-we-work">Explore Our Capabilities</Button>
+          <Button variant="secondary" href="#how-we-work">How We Work</Button>
         </div>
       </section>
 
-      <Reveal as="section" className={styles.block}>
+      <Reveal as="section" id="how-we-work" className={styles.block}>
         <div className={styles.blockInner}>
           <SectionHeader
-            eyebrow="Brand Pillars"
-            heading="Access. Commercial intelligence. Execution."
+            eyebrow="How We Work"
+            heading="Market access. Commercial intelligence. Execution."
           />
           <ol className={styles.pillars}>
             <li>
-              <NumberedCard number="01. ACCESS" title="Access">
-                Knowing the right operators, counterparties, buyers,
-                manufacturers, distributors, and strategic partners.
+              <NumberedCard number="01. MARKET ACCESS" title="Market Access">
+                Access. Direct, active relationships with operators,
+                manufacturers, distributors, buyers and brand owners across
+                the markets we work in. Not a contact list. People we
+                transact with.
               </NumberedCard>
             </li>
             <li>
-              <NumberedCard number="02. INTELLIGENCE" title="Commercial Intelligence">
-                Understanding market dynamics, pricing, margins, supply,
-                demand, and where value can realistically be created.
+              <NumberedCard number="02. COMMERCIAL INTELLIGENCE" title="Commercial Intelligence">
+                Commercial Intelligence. What a market is actually paying
+                this month. Where margin sits and who is capturing it.
+                Which operators are long, which are short, and which
+                permissions exist to move product between them. This is
+                the difference between an opportunity that looks good and
+                one that clears.
               </NumberedCard>
             </li>
             <li>
               <NumberedCard number="03. EXECUTION" title="Execution">
-                Staying involved beyond strategy or introductions:
-                structuring, negotiating, and moving opportunities into
-                signed business.
+                Execution. We stay involved past the introduction.
+                Structuring, negotiation, and remaining in the transaction
+                until there is an operating agreement rather than an
+                interest.
               </NumberedCard>
             </li>
           </ol>
         </div>
       </Reveal>
 
-      <Reveal as="section" className={styles.block}>
-        <div className={`${styles.blockInner} ${styles.capabilities}`}>
-          <MediaBlock
-            aspectRatio="4/3"
-            src="https://res.cloudinary.com/gwyqp12n/image/upload/v1788776531/placeholder--img-home.webp"
-            alt="Placeholder image — not final photography"
-          />
-          <div>
-            <SectionHeader
-              eyebrow="Capabilities"
-              heading={
-                <>
-                  The recommendation comes with the introduction{" "}
-                  <em>attached.</em>
-                </>
-              }
-              lede="We identify where value can be created across the transaction, assess strategic fit, align the economics, and stay actively involved through negotiation and execution."
-            />
-            <Button variant="secondary" href="/how-we-work">Explore capabilities</Button>
-          </div>
-        </div>
-      </Reveal>
-
+      {/*
+        ASSUMPTION — StatementBlock has never taken a link/CTA before.
+        `link` prop shape below is a guess. Paste StatementBlock.tsx so
+        I can confirm the real prop name (or add support for one) before
+        this ships.
+      */}
       <StatementBlock
-        eyebrow="Where This Shows Up"
-        sub="Access isn't a service line. It's the reason the rest of the work is possible."
+        eyebrow="NAR Verified"
+        sub="Companies describe themselves in the language of what they intend to do. Regulators record what they are permitted to do. We establish the second before we make the first call."
+        link={{ label: "How verification works →", href: "/nar-verified" }}
       >
-        Twenty years in rooms most firms <em>never reach.</em>
+        Every opportunity we bring forward is commercially assessed and
+        independently verified before introduction.
       </StatementBlock>
 
       <Reveal as="section" className={styles.block}>
@@ -96,12 +88,33 @@ export default function Home() {
             <SectionHeader eyebrow="Where We Operate" heading="Markets" />
             <a href="/markets" className={styles.viewAll}>View all markets</a>
           </div>
+          {/*
+            ASSUMPTION — TeaserGrid previously only rendered tag+title
+            (no description). New copy gives each market a full sentence.
+            Paste TeaserGrid.tsx to confirm it supports `description`,
+            or these lines get dropped silently.
+          */}
           <TeaserGrid
             columns={3}
             items={[
-              { tag: "Market", title: "United States", href: "/markets#us" },
-              { tag: "Market", title: "Europe", href: "/markets#europe" },
-              { tag: "Market", title: "Emerging & International", href: "/markets#emerging" },
+              {
+                tag: "Established",
+                title: "United States",
+                body: "Wholesale supply, brand and manufacturing partnerships, sales structuring and transactions across licensed markets.",
+                href: "/markets",
+              },
+              {
+                tag: "Expanding",
+                title: "Europe",
+                body: "Germany, Switzerland and the Czech Republic. Medical supply, manufacturing, import and distribution.",
+                href: "/markets",
+              },
+              {
+                tag: "Prospective",
+                title: "Select International",
+                body: "Emerging regulated markets under active evaluation.",
+                href: "/markets",
+              },
             ]}
           />
         </div>

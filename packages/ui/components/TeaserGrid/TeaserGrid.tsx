@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './TeaserGrid.module.css';
 
 export type TeaserItem = {
-  tag: string;
+  tag?: string;
   title: string;
   body?: string;
   href?: string;
@@ -24,7 +24,7 @@ export function TeaserGrid({ items, columns = 3, className }: TeaserGridProps) {
       {items.map((item) => {
         const content = (
           <>
-            <div className={styles.tag}>{item.tag}</div>
+            {item.tag && <div className={styles.tag}>{item.tag}</div>}
             <h4 className={styles.title}>{item.title}</h4>
             {item.body && <p className={styles.body}>{item.body}</p>}
           </>

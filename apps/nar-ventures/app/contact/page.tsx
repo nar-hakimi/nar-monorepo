@@ -42,7 +42,14 @@ export default function ContactPage() {
     if (status === 'sending') return;
     setStatus('sending');
 
-    const data = Object.fromEntries(new FormData(e.currentTarget));
+    // Captured synchronously, before the await below — React can null
+    // out or recycle e.currentTarget on a SyntheticEvent once an async
+    // gap has passed, so reaching back into `e` after `await fetch(...)`
+    // is unreliable. This was causing form.reset() to throw silently,
+    // which the catch block turned into a false "error" state even on
+    // a successful submission.
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
 
     try {
       const res = await fetch('/api/contact', {
@@ -52,7 +59,7 @@ export default function ContactPage() {
       });
       if (!res.ok) throw new Error('Request failed');
       setStatus('sent');
-      e.currentTarget.reset();
+      form.reset();
     } catch {
       setStatus('error');
     }
@@ -88,6 +95,22 @@ export default function ContactPage() {
       <Reveal as="section" className={`${styles.block} ${styles.intro}`}>
         <div className={styles.blockInner}>
           <form className={styles.form} onSubmit={handleSubmit}>
+            {/*
+              Honeypot — hidden from real users (off-screen, not
+              display:none — some bots specifically skip display:none
+              fields to avoid detection). A bot that fills every field
+              blindly will fill this one; a real person never sees it.
+              Checked server-side in route.ts.
+            */}
+            <input
+              type="text"
+              name="website"
+              className={styles.honeypot}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
+
             <div className={styles.row}>
               <FormField label="Name" name="name" type="text" required />
               <FormField label="Company" name="company" type="text" />

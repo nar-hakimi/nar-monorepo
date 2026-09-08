@@ -22,6 +22,7 @@
   --color-gray:         var(--gray-600); /* tertiary text / meta */
   --color-hairline:     var(--gray-200); /* dividers, borders */
   --color-signal:       var(--red-700);  /* accent only — never a field color */
+  --color-success:      var(--green-700); /* form/status confirmation only — the one deliberate exception to the black/white/red system */
 
   /* ============================================================
      FONT FAMILIES

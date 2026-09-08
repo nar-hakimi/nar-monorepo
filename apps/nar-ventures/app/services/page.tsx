@@ -1,29 +1,45 @@
-import { PageHeader, Eyebrow, Button, Reveal } from '@nar/ui';
+import { PageHeader, Eyebrow, TeaserGrid, Button, Reveal } from '@nar/ui';
 import styles from './page.module.css';
 
+// Eyebrow below is invented — CONTENT-v3.md doesn't specify one for this
+// page. Same status as other invented eyebrows across the site.
+
 const services = [
-  'Strategic Partnerships & Business Development',
-  'Market Entry & Expansion',
-  'Commercial Growth Strategy',
-  'Partner Identification & Introductions',
-  'Sourcing & Procurement Strategy',
-  'Wholesale & Supply Strategy',
-  'Manufacturing & Processing Partnerships',
-  'Distribution & Retail Strategy',
-  'Brand Strategy & Product Development',
-  'Pricing & Margin Optimization',
-  'Deal Structuring & Negotiation',
-  'Execution Support',
+  {
+    tag: '01',
+    title: 'Market Entry & Commercial Strategy',
+    body: 'The commercial architecture of entering a new state or country. Route to market, partner selection, pricing against live conditions, and the structure to support it.',
+  },
+  {
+    tag: '02',
+    title: 'Strategic Partnerships',
+    body: 'Identifying, assessing and structuring commercial relationships between operators, manufacturers, distributors and brand owners, including where the parties sit in different jurisdictions.',
+  },
+  {
+    tag: '03',
+    title: 'Brand & Manufacturing Partnerships',
+    body: 'We place brands with licensed manufacturers in markets they cannot enter directly, and negotiate the production, quality and territorial terms that protect the name once it is out of your control.',
+  },
+  {
+    tag: '04',
+    title: 'Wholesale & Supply',
+    body: 'Product and materials into multi-state operators and established brands. We move product every week and hold the relationship through pricing cycles rather than deal by deal.',
+  },
+  {
+    tag: '05',
+    title: 'Cross-Border Supply',
+    body: 'Supply into regulated pharmaceutical channels between countries. Permissions verified on both sides, import and export documentation, and the commercial agreement between the parties.',
+  },
+  {
+    tag: '06',
+    title: 'Strategic Transactions',
+    body: "Buy-side and sell-side advisory. Target identification, commercial modeling, and diligence on what a target's licenses actually permit, which is frequently narrower than its materials suggest.",
+  },
 ];
 
 export default function ServicesPage() {
   return (
     <main>
-      {/*
-        TODO: eyebrow invented — CONTENT.md doesn't specify one for this
-        page. Flag for Nar's confirmation, same status as other flagged
-        placeholder copy on this site.
-      */}
       <PageHeader
         eyebrow="What We Do"
         heading="Services"
@@ -36,14 +52,7 @@ export default function ServicesPage() {
             No pricing shown anywhere on this page, and no M&A framing —
             both explicit constraints from PROJECT_CONTEXT.md.
           */}
-          <ul className={styles.services}>
-            {services.map((service) => (
-              <li key={service} className={styles.service}>
-                <span className={styles.dot} aria-hidden="true" />
-                <p className={styles.serviceText}>{service}</p>
-              </li>
-            ))}
-          </ul>
+          <TeaserGrid items={services} columns={3} />
         </div>
       </Reveal>
 

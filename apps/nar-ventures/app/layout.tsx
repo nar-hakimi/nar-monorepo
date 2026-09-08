@@ -6,7 +6,7 @@ import { Navbar, Footer } from "@nar/ui";
 
 export const metadata: Metadata = {
   title: "NAR Ventures",
-  description: "Strategic Growth & Commercial Partnerships",
+  description: "Commercial Advisory & Transactions · Regulated Markets",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -23,12 +23,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <Navbar
           links={[
-            { label: "Industries", href: "/industries" },
+            { label: "Why NAR Ventures", href: "/why-nar-ventures" },
+            { label: "NAR Verified", href: "/nar-verified" },
+            { label: "About", href: "/about" },
             { label: "Markets", href: "/markets" },
+            { label: "Services", href: "/services" },
             { label: "Experience", href: "/experience" },
             { label: "How We Work", href: "/how-we-work" },
-            { label: "Services", href: "/services" },
-            { label: "About", href: "/about" },
           ]}
           ctaLabel="Contact"
           ctaHref="/contact"
@@ -40,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             {
               title: 'Explore',
               links: [
-                { label: 'Industries', href: '/industries' },
+                { label: 'Why NAR Ventures', href: '/why-nar-ventures' },
                 { label: 'Markets', href: '/markets' },
                 { label: 'Experience', href: '/experience' },
                 { label: 'How We Work', href: '/how-we-work' },
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             {
               title: 'Company',
               links: [
+                { label: 'NAR Verified', href: '/nar-verified' },
                 { label: 'Services', href: '/services' },
                 { label: 'About', href: '/about' },
               ],
