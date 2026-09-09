@@ -56,7 +56,7 @@
   --fs-h3:         clamp(1.25rem,   1.153rem + 0.41vw, 1.8125rem);  /* 20 -> 29px  — card/pillar headings */
   --fs-h2:         clamp(1.75rem,   1.589rem + 0.69vw, 2.6875rem);  /* 28 -> 43px  — section headings */
   --fs-display-sm: clamp(2rem,      1.764rem + 1.01vw, 3.375rem);   /* 32 -> 54px  — interior page headers */
-  --fs-display-lg: clamp(2rem,      1.635rem + 1.56vw, 4.125rem);   /* 32 -> 66px  — homepage hero */
+  --fs-display-lg: clamp(2.5rem, 2.028rem + 2.01vw, 5.25rem);   /* 40 -> 84px — homepage hero + interior page headers */
 
   /* ============================================================
      FLUID SPACE SCALE
@@ -78,5 +78,12 @@
      LAYOUT
   ============================================================ */
   --content-max-width: 1440px;
-  --section-px: var(--space-l); /* horizontal section padding, fluid */
+  --section-px: var(--space-l);
+  --navbar-height: 85px; /* measured: 84.5px, rounded up */
+}
+
+@media (max-width: 1279px) {
+  :root {
+    --navbar-height: 54px; /* measured: 53.5px, rounded up */
+  }
 }

@@ -1,4 +1,4 @@
-import { PageHeader, Reveal, Eyebrow, Button } from "@nar/ui";
+import { PageHeader, Reveal, Eyebrow, Button, StatementBlock } from "@nar/ui";
 import styles from "./page.module.css";
 
 export default function NarVerified() {
@@ -13,13 +13,22 @@ export default function NarVerified() {
           </>
         }
         lede="Most opportunities in regulated markets are presented on the strength of what a company intends to do. Regulators record something narrower: what it is permitted to do, under which authorization, at which site, until when."
+        fullHeight
       />
 
-      <Reveal as="section" className={`${styles.block} ${styles.intro}`}>
+      <StatementBlock eyebrow="Our Standard">
+        NAR Verified is the standard we apply before an opportunity
+        reaches a client. It is included in every engagement.
+      </StatementBlock>
+
+      <Reveal as="section" className={styles.block}>
         <div className={styles.blockInner}>
-          <p className={styles.standalone}>
-            NAR Verified is the standard we apply before an opportunity
-            reaches a client. It is included in every engagement.
+          <h3 className={styles.subhead}>The commercial assessment comes first.</h3>
+          <p className={styles.body}>
+            Whether the economics work, where margin sits, what the
+            counterparty actually needs, and whether the transaction can be
+            executed in the form proposed. A perfectly licensed counterparty
+            in a deal that does not clear is still not an opportunity.
           </p>
         </div>
       </Reveal>

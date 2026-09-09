@@ -5,11 +5,11 @@ import styles from './MediaBlock.module.css';
 type MediaBlockProps = {
   src?: string;
   alt?: string;
-  /** Fixed aspect ratio, e.g. "4/3", "16/9", "1/1". */
   aspectRatio?: string;
-  /** Fallback dark placeholder shown when no src is provided yet. */
   placeholder?: ReactNode;
   className?: string;
+  /** Container background. Defaults to the placeholder's ink fill. */
+  background?: string;
 };
 
 export function MediaBlock({
@@ -18,11 +18,12 @@ export function MediaBlock({
   aspectRatio = '4/3',
   placeholder,
   className,
+  background,
 }: MediaBlockProps) {
   return (
     <div
       className={[styles.block, className].filter(Boolean).join(' ')}
-      style={{ aspectRatio }}
+      style={{ aspectRatio, ...(background ? { background } : {}) }}
     >
       {src ? (
         <Image src={src} alt={alt} fill className={styles.image} />

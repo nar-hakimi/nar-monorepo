@@ -10,13 +10,18 @@ export default function AboutPage() {
       />
 
       <div className={styles.titleWrap}>
-        <Eyebrow>Founder &amp; CEO</Eyebrow>
+        <Eyebrow variant="subtitle">Founder &amp; CEO</Eyebrow>
       </div>
 
       <Reveal as="section" className={`${styles.block} ${styles.intro}`}>
         <div className={`${styles.blockInner} ${styles.founder}`}>
           <div>
-            <MediaBlock aspectRatio="4/5" />
+            <MediaBlock
+              src="https://res.cloudinary.com/gwyqp12n/image/upload/v1788919797/nar-headshot.jpg"
+              alt="Nar Hakimi, Founder & CEO of NAR Ventures"
+              aspectRatio="5/5"
+              background="var(--color-paper)"
+            />
           </div>
           <div>
             <p className={styles.founderBody}>

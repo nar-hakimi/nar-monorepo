@@ -28,3 +28,9 @@
 .center {
   justify-content: center;
 }
+
+.subtitle {
+  color: var(--color-ink-soft);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}

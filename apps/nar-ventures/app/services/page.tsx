@@ -44,6 +44,7 @@ export default function ServicesPage() {
         eyebrow="What We Do"
         heading="Services"
         lede="Most engagements are customized, beginning with an initial conversation to understand your company, market, objective, and commercial challenge."
+        fullHeight
       />
 
       <Reveal as="section" className={`${styles.block} ${styles.intro}`}>

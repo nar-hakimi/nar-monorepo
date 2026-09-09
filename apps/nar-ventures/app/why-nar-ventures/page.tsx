@@ -13,6 +13,7 @@ export default function WhyNarVentures() {
           </>
         }
         lede="NAR Ventures combines direct market relationships with current commercial intelligence and transaction execution. We do not simply identify counterparties. We understand what they need, whether the economics align, whether the required permissions exist, and what it will take to move an opportunity forward."
+        fullHeight
       />
 
       <Reveal as="section" className={`${styles.block} ${styles.intro}`}>

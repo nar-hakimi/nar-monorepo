@@ -14,6 +14,7 @@ export default function HowWeWorkPage() {
         eyebrow="Our Process"
         heading="How We Work"
         lede="Most strategic advisory firms stop at the recommendation. We don't. NAR Ventures works from an active operator network and stays involved beyond the strategy: through the relationship, the negotiation, and the execution."
+        fullHeight
       />
 
       {/*

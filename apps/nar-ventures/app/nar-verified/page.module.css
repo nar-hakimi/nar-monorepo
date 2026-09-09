@@ -15,15 +15,6 @@
   padding-top: 0;
 }
 
-.standalone {
-  font-family: var(--font-body);
-  font-size: var(--fs-lede);
-  color: var(--color-ink-soft);
-  line-height: 1.65;
-  max-width: 44rem;
-  margin: 0;
-}
-
 .subhead {
   font-family: var(--font-display);
   font-weight: 500;
