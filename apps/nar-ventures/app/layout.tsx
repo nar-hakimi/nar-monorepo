@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nar-ventures.vercel.app"),
   title: "NAR Ventures",
   description: "Commercial Advisory & Transactions · Regulated Markets",
+  openGraph: {
+    title: "NAR Ventures",
+    description: "Commercial Advisory & Transactions · Regulated Markets",
+    url: "https://nar-ventures.vercel.app",
+    siteName: "NAR Ventures",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
