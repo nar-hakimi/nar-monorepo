@@ -5,13 +5,13 @@ import "../styles/tokens.css";
 import { Navbar, Footer } from "@nar/ui";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nar-ventures.vercel.app"),
+  metadataBase: new URL("https://www.narventures.co"),
   title: "NAR Ventures",
   description: "Commercial Advisory & Transactions · Regulated Markets",
   openGraph: {
     title: "NAR Ventures",
     description: "Commercial Advisory & Transactions · Regulated Markets",
-    url: "https://nar-ventures.vercel.app",
+    url: "https://www.narventures.co",
     siteName: "NAR Ventures",
     type: "website",
   },
