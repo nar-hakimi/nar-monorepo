@@ -5,6 +5,7 @@ import "../styles/tokens.css";
 import { Navbar, Footer } from "@nar/ui";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nar-ventures.vercel.app"),
   title: "NAR Ventures",
   description: "Commercial Advisory & Transactions · Regulated Markets",
 };
