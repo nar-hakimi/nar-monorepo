@@ -41,7 +41,7 @@ export default function ServicesPage() {
   return (
     <main>
       <PageHeader
-        eyebrow="What We Do"
+        eyebrow="Our Practice"
         heading="Services"
         lede="Most engagements are customized, beginning with an initial conversation to understand your company, market, objective, and commercial challenge."
         fullHeight

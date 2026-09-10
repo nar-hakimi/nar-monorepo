@@ -112,3 +112,10 @@
     gap: var(--space-l);
   }
 }
+
+.wordmarkImage {
+  display: block;
+  margin-bottom: var(--space-s);
+  height: 60px;
+  width: auto;
+}

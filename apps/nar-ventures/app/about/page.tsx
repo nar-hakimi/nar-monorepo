@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <main>
       <PageHeader
-        eyebrow="About"
+        eyebrow="Who You're Working With"
         heading="Nar Hakimi"
       />
 

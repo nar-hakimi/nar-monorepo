@@ -5,7 +5,7 @@ export default function NarVerified() {
   return (
     <main>
       <PageHeader
-        eyebrow="NAR Verified"
+        eyebrow="Our Standard"
         heading={
           <>
             Commercially assessed. Independently verified. Then{" "}

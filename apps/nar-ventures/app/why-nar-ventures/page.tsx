@@ -22,17 +22,17 @@ export default function WhyNarVentures() {
             columns={3}
             items={[
                 {
-                tag: "Relationships",
+                tag: "Access",
                 title: "In-Market",
                 body: "Active relationships with buyers, operators, manufacturers and brands.",
                 },
                 {
-                tag: "Geography",
+                tag: "Markets",
                 title: "Cross-Market",
                 body: "Commercial activity spanning the United States and Europe.",
                 },
                 {
-                tag: "Process",
+                tag: "Execution",
                 title: "Execution-Led",
                 body: "From identification and diligence through negotiation and operating agreement.",
                 },

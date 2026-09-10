@@ -1,10 +1,12 @@
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export type FooterLink = {
   label: string;
   href: string;
+  external?: boolean; // opens in a new tab when true
 };
 
 export type FooterLinkGroup = {
@@ -13,14 +15,12 @@ export type FooterLinkGroup = {
 };
 
 type FooterProps = {
-  wordmark?: string;
   tagline?: ReactNode; // supports inline <em> emphasis, same pattern as headings
   groups: FooterLinkGroup[];
   copyrightName?: string;
 };
 
 export function Footer({
-  wordmark = 'NAR VENTURES',
   tagline,
   groups,
   copyrightName = 'NAR Ventures',
@@ -31,10 +31,13 @@ export function Footer({
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.brandCol}>
-          <div className={styles.wordmark}>
-            {wordmark}
-            <span className={styles.dot}>.</span>
-          </div>
+          <Image
+            src="/nar-ventures-logo-light.svg"
+            alt="NAR Ventures"
+            width={296}
+            height={60}
+            className={styles.wordmarkImage}
+          />
           {tagline && <p className={styles.tagline}>{tagline}</p>}
         </div>
 
@@ -45,9 +48,20 @@ export function Footer({
               <ul className={styles.groupLinks}>
                 {group.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className={styles.link}>
-                      {link.label}
-                    </Link>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        className={styles.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link href={link.href} className={styles.link}>
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

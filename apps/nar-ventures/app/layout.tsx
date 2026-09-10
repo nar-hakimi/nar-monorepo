@@ -59,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               title: 'Connect',
               links: [
                 { label: 'Contact', href: '/contact' },
-                { label: 'LinkedIn', href: 'https://linkedin.com' },
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/company/narventures-llc/home/', external: true },
               ],
             },
           ]}

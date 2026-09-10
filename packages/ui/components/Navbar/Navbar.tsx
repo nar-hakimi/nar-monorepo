@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '../Button/Button';
@@ -12,7 +13,6 @@ export type NavLink = {
 };
 
 type NavbarProps = {
-  wordmark?: string;
   wordmarkHref?: string;
   links: NavLink[];
   ctaLabel?: string;
@@ -20,7 +20,6 @@ type NavbarProps = {
 };
 
 export function Navbar({
-  wordmark = 'NAR VENTURES',
   wordmarkHref = '/',
   links,
   ctaLabel = 'Contact',
@@ -84,9 +83,24 @@ export function Navbar({
     <>
       <nav className={isHidden ? `${styles.nav} ${styles.navHidden}` : styles.nav}>
         <div className={styles.navInner}>
-          <Link href={wordmarkHref} className={styles.wordmark}>
-            {wordmark}
-            <span className={styles.dot}>.</span>
+          <Link
+            href={wordmarkHref}
+            className={styles.wordmark}
+            onClick={(e) => {
+              if (pathname === wordmarkHref) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+          >
+            <Image
+              src="/nar-ventures-logo-light.svg"
+              alt="NAR Ventures"
+              width={296}
+              height={60}
+              priority
+              className={styles.wordmarkImage}
+            />
           </Link>
 
           <ul className={styles.links}>

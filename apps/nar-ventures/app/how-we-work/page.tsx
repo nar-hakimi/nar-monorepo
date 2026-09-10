@@ -11,7 +11,7 @@ export default function HowWeWorkPage() {
         the Homepage StatementBlock copy and Contact's eyebrow.
       */}
       <PageHeader
-        eyebrow="Our Process"
+        eyebrow="Our Philosophy"
         heading="How We Work"
         lede="Most strategic advisory firms stop at the recommendation. We don't. NAR Ventures works from an active operator network and stays involved beyond the strategy: through the relationship, the negotiation, and the execution."
         fullHeight
